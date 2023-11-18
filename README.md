@@ -20,6 +20,8 @@ The 'res/coords' directory contains all the information regarding which lesson h
 ![1](https://github.com/Cezary-Androsiuk/Files_on_Schedule/blob/master/pictures/1.png?raw=true)
 ![1](https://github.com/Cezary-Androsiuk/Files_on_Schedule/blob/master/pictures/2.png?raw=true)
 
+## Example Terminal Logs
+
 ```log
 Info: Window: constructing objects
 Info: ConfData: constructing objects
