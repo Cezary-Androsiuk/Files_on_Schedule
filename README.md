@@ -4,8 +4,13 @@
 
 Cross-platform app supporting Windows and Linux. Facilitates file and folder management, by enabling users to associate files/folders with specific lessons on a weekly schedule for efficient organization and access.
 
+
+## Description
+
 The 'res/exec' directory contains all the scripts required to add a new schedule to the application. These scripts are configured to import schedules exclusively from USOSweb (Uniwersytecki System Obsługi Studiów). It's important to note that the schedules must be named in the format 'YYYY-MM-DD-YYYY-MM-DD.png,' mirroring the format used in the USOSweb schedule descriptions.
+
 By modifying the content of the 'res/exec' path, you can tailor the application to your class schedule, allowing the app to automatically detect individual lessons in new added schedules. Additionally, customization of the app is possible through the 'res/conf.json' file.
+
 All schedules are sorted based on their names and displayed from the oldest to the newest. This arrangement allows for the seamless addition of both new and older plans.
 The 'res/coords' directory contains all the information regarding which lesson has associated coordinates for buttons and which file/folder is associated with it. This information is organized based on weekly schedules.
 
