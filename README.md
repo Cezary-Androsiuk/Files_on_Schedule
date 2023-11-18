@@ -9,10 +9,27 @@ By modifying the content of the 'res/exec' path, you can tailor the application 
 All schedules are sorted based on their names and displayed from the oldest to the newest. This arrangement allows for the seamless addition of both new and older plans.
 The 'res/coords' directory contains all the information regarding which lesson has associated coordinates for buttons and which file/folder is associated with it. This information is organized based on weekly schedules.
 
+
 ## Required
 - **C++17**
 - **SFML-2.6.1**
+- **CMake 3.10**
 - **Python 3.11.5**
+
+
+## Compile
+### Linux
+```bash
+mkdir bin && cd bin;
+cmake .. && make && ./main;
+```
+
+### Windows 
+```bash
+mkdir bin && cd bin;
+cmake -G "MinGW Makefiles" .. && cmake --build . && .\main
+```
+
 
 ## Screenshots
 
