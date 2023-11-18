@@ -1,0 +1,29 @@
+{
+    "Button_0": {
+        "href": "",
+        "rect": {
+            "height": 90.0,
+            "left": 612.0,
+            "top": 84.0,
+            "width": 136.0
+        }
+    },
+    "Button_1": {
+        "href": "",
+        "rect": {
+            "height": 90.0,
+            "left": 612.0,
+            "top": 204.0,
+            "width": 136.0
+        }
+    },
+    "Button_2": {
+        "href": "",
+        "rect": {
+            "height": 90.0,
+            "left": 612.0,
+            "top": 309.0,
+            "width": 136.0
+        }
+    }
+}

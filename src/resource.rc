@@ -1,0 +1,7 @@
+#ifndef _resources_rc
+#define _resources_rc
+
+#include "windows.h"
+MAIN_ICON ICON "res/exe_file_icon.ico"
+
+#endif

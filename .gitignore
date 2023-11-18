@@ -1,0 +1,7 @@
+.vscode
+
+bin
+
+app/versions
+
+data/logs-history.7z

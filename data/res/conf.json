@@ -1,0 +1,189 @@
+{
+    "Window Title": "Schedule Visualizer",
+    "Icon Path": "app_icon.png",
+    "Window Size": {
+        "x": 750,
+        "y": 854
+    },
+    "Window Position": {
+        "x": 575,
+        "y": 40
+    },
+    "Window Margin": {
+        "x": 20.0,
+        "y": 80.0
+    },
+    "Schedule Position": {
+        "x": 10.0,
+        "y": 80.0
+    },
+    "Default Image File": "default.png",
+    "Background Image File": "schedule_background.png",
+    "Schedules Path": "schedules",
+    "Coords Path": "coords",
+    "Font File": "fonts/OpenSans-Regular.ttf",
+    "State File": "state.json",
+    "Schedule Image Extension": ".png",
+    "Button Data Extension": ".buttondata.json",
+    "Frame Rate" : {
+        "idle" : 10,
+        "active" : 30
+    },
+    "Log Save Schedule List": false,
+    "Logs In CMD": true,
+    "Display CMD": false,
+    "Reverse Scroll Direction": false,
+    "Exec Path" : "exec",
+    "Exec Path Input": "in",
+    "Exec Path Output": "out",
+    "Exec Files": {
+        "change image exposure": "change_image_exposure.py",
+        "find coords inside week schedule": "find_coords_inside_week_schedule.py",
+        "translate coords to json": "translate_coords_to_json"
+    },
+    "Exec Files Extension": {
+        "linux": ".out",
+        "windows": ".exe"
+    },
+    "Schedule Fade Mask": 40,
+    "Colors" : {
+        "Background" : {
+            "r": 30, 
+            "g": 30, 
+            "b": 30, 
+            "a": 255
+        },
+        "Delete Schedule Button":{
+            "idle" : {
+                "r": 200,
+                "g": 60,
+                "b": 60,
+                "a": 180
+            },
+            "hover" : {
+                "r": 160,
+                "g": 60,
+                "b": 60,
+                "a": 180
+            },
+            "press" : {
+                "r": 240,
+                "g": 60,
+                "b": 60,
+                "a": 180
+            }
+        },
+        "Add New Schedule Button":{
+            "idle" : {
+                "r": 60, 
+                "g": 200,
+                "b": 60,
+                "a": 180
+            },
+            "hover" : {
+                "r": 60, 
+                "g": 160,
+                "b": 60,
+                "a": 180
+            },
+            "press" : {
+                "r": 60, 
+                "g": 240,
+                "b": 60,
+                "a": 180
+            }
+        },
+        "Buttons" : {
+            "DeleteMode" : {
+                "Active" : {
+                    "idle" : {
+                        "r": 220, 
+                        "g": 20, 
+                        "b": 20, 
+                        "a": 60
+                    },
+                    "hover" : {
+                        "r": 250, 
+                        "g": 20, 
+                        "b": 20, 
+                        "a": 60
+                    },
+                    "press" : {
+                        "r": 200, 
+                        "g": 20, 
+                        "b": 20, 
+                        "a": 60
+                    }
+                },
+                "Deactive" : {
+                    "idle" : {
+                        "r": 220, 
+                        "g": 20, 
+                        "b": 20, 
+                        "a": 10
+                    },
+                    "hover" : {
+                        "r": 250, 
+                        "g": 20, 
+                        "b": 20, 
+                        "a": 10
+                    },
+                    "press" : {
+                        "r": 200, 
+                        "g": 20, 
+                        "b": 20, 
+                        "a": 10
+                    }
+                }
+            },
+            "StandardMode" : {
+                "Active" : {
+                    "idle" : {
+                        "r": 0, 
+                        "g": 0, 
+                        "b": 0, 
+                        "a": 0
+                    },
+                    "hover" : {
+                        "r": 60, 
+                        "g": 60, 
+                        "b": 60, 
+                        "a": 30
+                    },
+                    "press" : {
+                        "r": 30, 
+                        "g": 30, 
+                        "b": 30, 
+                        "a": 60}
+                },
+                "Deactive" : {
+                    "idle" : {
+                        "r": 50, 
+                        "g": 50, 
+                        "b": 50, 
+                        "a": 120
+                    },
+                    "hover" : {
+                        "r": 60, 
+                        "g": 60, 
+                        "b": 60, 
+                        "a": 100
+                    },
+                    "press" : {
+                        "r": 30, 
+                        "g": 30, 
+                        "b": 30, 
+                        "a": 160
+                    }
+                }
+            }
+        },
+        "Text": {
+            "r": 255, 
+            "g": 255, 
+            "b": 255, 
+            "a": 150
+        }
+        
+    }
+}
