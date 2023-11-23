@@ -148,11 +148,15 @@ void Schedule::saveButtonData()
     }
 
     Json button_json;
+    if(button_json.is_null()){
+        printf("Warning: Schedule: data saving was skipped because it is null json.\n");
+        return;
+    }
     for (const auto &bd : this->buttons_single_lesson)
     {
         std::string button_name = bd.button->getName();
         auto pos = bd.button->getPosition() - this->confdata->schedule_position;
-        ;
+        
         button_json[button_name]["rect"]["left"] = pos.x;
         button_json[button_name]["rect"]["top"] = pos.y;
         auto size = bd.button->getSize();
@@ -195,28 +199,46 @@ void Schedule::loadButtonData()
         printf("Warning: Schedule: can not read button data file '%s'\n", button_file.string().c_str());
         return;
     }
-    ifile >> button_json;
+    try
+    {
+        ifile >> button_json;
+    }
+    catch(const std::exception& e)
+    {
+        printf("Error: Objects: error while moving button data to variable, \
+            to fix delete this week schedule and add it again\n  error: %s\n", e.what());
+        ifile.close();
+        return;
+    }
+
     ifile.close();
     printf("Info: Schedule: button data was storred in json variable\n");
-
-    for (auto &button : button_json.items())
+    try
     {
-        if (button.key().find("Button_", 0) == 0)
+        for (auto &button : button_json.items())
         {
-            sf::FloatRect buttonBounds;
-            JsonRead::toVar(button.value(), {"rect"}, buttonBounds);
-            buttonBounds.left += this->confdata->schedule_position.x;
-            buttonBounds.top += this->confdata->schedule_position.y;
+            if (button.key().find("Button_", 0) == 0)
+            {
+                sf::FloatRect buttonBounds;
+                JsonRead::toVar(button.value(), {"rect"}, buttonBounds);
+                buttonBounds.left += this->confdata->schedule_position.x;
+                buttonBounds.top += this->confdata->schedule_position.y;
 
-            ButtonData bd = {
-                .button = new sgui::Button(buttonBounds, button.key())};
-            JsonRead::toVar(button.value(), {"href"}, bd.href);
+                ButtonData bd = {
+                    .button = new sgui::Button(buttonBounds, button.key())};
+                JsonRead::toVar(button.value(), {"href"}, bd.href);
 
-            this->setButtonColor(&bd);
+                this->setButtonColor(&bd);
 
-            this->buttons_single_lesson.push_back(bd);
-            printf("Info: Schedule: %s data was setted\n", button.key().c_str());
+                this->buttons_single_lesson.push_back(bd);
+                printf("Info: Schedule: %s data was setted\n", button.key().c_str());
+            }
         }
+    }
+    catch(const std::exception& e)
+    {
+        printf("Error: Objects: error while reading button data from variable, \
+            to fix delete this week schedule and add it again\n  error: %s\n", e.what());
     }
     printf("Info: Schedule: all buttons was loaded\n");
 }
