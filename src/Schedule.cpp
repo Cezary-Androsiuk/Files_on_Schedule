@@ -148,8 +148,8 @@ void Schedule::saveButtonData()
     }
 
     Json button_json;
-    if(button_json.is_null()){
-        printf("Warning: Schedule: data saving was skipped because it is null json.\n");
+    if(this->buttons_single_lesson.empty()){
+        printf("INFO: Schedule: data saving was skipped because it is empty.\n");
         return;
     }
     for (const auto &bd : this->buttons_single_lesson)
@@ -205,8 +205,7 @@ void Schedule::loadButtonData()
     }
     catch(const std::exception& e)
     {
-        printf("Error: Objects: error while moving button data to variable, \
-            to fix delete this week schedule and add it again\n  error: %s\n", e.what());
+        printf("Error: Objects: error while moving button data to variable,\nto fix delete this week schedule and add it again\n  error: %s\n", e.what());
         ifile.close();
         return;
     }
@@ -237,8 +236,7 @@ void Schedule::loadButtonData()
     }
     catch(const std::exception& e)
     {
-        printf("Error: Objects: error while reading button data from variable, \
-            to fix delete this week schedule and add it again\n  error: %s\n", e.what());
+        printf("Error: Objects: error while reading button data from variable,\nto fix delete this week schedule and add it again\n  error: %s\n", e.what());
     }
     printf("Info: Schedule: all buttons was loaded\n");
 }
