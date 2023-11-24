@@ -12,11 +12,15 @@ def brightness_exponential(name, val):
     w, h = img.size
     for i in range(w):
         for j in range(h):
-            r, g, b, a = img.getpixel((i,j))
+            r, g, b = img.getpixel((i,j))
             r = int(255 * (r/255) ** new_val)
             g = int(255 * (g/255) ** new_val)
             b = int(255 * (b/255) ** new_val)
             result_img.putpixel((i,j), (r,g,b))
+    if not os.path.exists('schedules/'):
+        os.mkdir('schedules/')
+    if os.path.exists('schedules/' + name ):
+        os.remove('schedules/' + name )
     result_img.save('schedules/' + name )#os.path.splitext(name)[0] + "_graphic.png")
 
 if __name__ == '__main__':

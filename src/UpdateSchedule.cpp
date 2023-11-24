@@ -203,7 +203,12 @@ void UpdateSchedule::addNewSchedule(const ConfData *const confdata)
         printf("Error: UpdateSchedule: incompatible extensions '%s' expecting schedule.png\n", filename.c_str());
         return;
     }
-    
+    if(!std::filesystem::exists(sfp(confdata->exec_path_in))){
+        std::filesystem::create_directories(sfp(confdata->exec_path_in));
+    }
+    if(std::filesystem::exists(sfp(confdata->exec_path_in) / sfp(filename).filename().string())){
+        std::filesystem::remove(sfp(confdata->exec_path_in) / sfp(filename).filename().string());
+    }
     if(!std::filesystem::copy_file(filename, sfp(confdata->exec_path_in) / sfp(filename).filename().string(), copyOptionsReplace))
     {
         printf("Error: UpdateSchedule: error while copying file from '%s' to '%s'\n", 
