@@ -5,3 +5,8 @@ bin
 app/versions
 
 data/logs-history.7z
+
+data/res/coords
+data/res/schedules
+
+pictures
